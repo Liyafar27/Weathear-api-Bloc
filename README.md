@@ -8,11 +8,11 @@ video      https://drive.google.com/file/d/1RHvLJGJ8q5haY3JQbCZKqKD8F7TObrFY/vie
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/Liyafar27/homePC/master/Screenshot_20211117-101942.png" width="250" alt="accessibility text">  
-    <img src="https://drive.google.com/file/d/1S9swEE8os-CStjF9m0bUCzssv7dg35Oy/view" width="250" alt="accessibility text">
-     <img src="https://raw.githubusercontent.com/Liyafar27/homePC/master/Screenshot_20211117-102039.png" width="250" alt="accessibility text">
+    <img src="https://raw.githubusercontent.com/Liyafar27/homePC/master/Screenshot_20211117-160945.png" width="250" alt="accessibility text">
+     <img src="https://raw.githubusercontent.com/Liyafar27/homePC/master/Screenshot_20211117-161018.png" width="250" alt="accessibility text">
 
  <p align="center">
     <img src="https://raw.githubusercontent.com/Liyafar27/homePC/master/Screenshot_20211117-102048.png" width="250" alt="accessibility text">  
     <img src="https://raw.githubusercontent.com/Liyafar27/homePC/master/Screenshot_20211117-102059.png" width="250" alt="accessibility text">
-
+    <img src="https://raw.githubusercontent.com/Liyafar27/homePC/master/Screenshot_20211117-161050.png" width="250" alt="accessibility text">
 </p>
