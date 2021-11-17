@@ -12,10 +12,7 @@ video      https://drive.google.com/file/d/1Uxbn7Wo7xQOXQSVjDs4JtOooIqiLNIKh/vie
      <img src="https://raw.githubusercontent.com/Liyafar27/homePC/master/Screenshot_20211117-102039.png" width="250" alt="accessibility text">
 
  <p align="center">
-    <img src="https://raw.githubusercontent.com/Liyafar27/homePC/master/Screenshot_20211117-101942.png" width="250" alt="accessibility text">  
-    <img src="https://raw.githubusercontent.com/Liyafar27/homePC/master/Screenshot_20211117-102013.png" width="250" alt="accessibility text">
-     <img src="https://raw.githubusercontent.com/Liyafar27/homePC/master/Screenshot_20211117-102039.png" width="250" alt="accessibility text">
-
-
+    <img src="https://raw.githubusercontent.com/Liyafar27/homePC/master/Screenshot_20211117-102048.png" width="250" alt="accessibility text">  
+    <img src="https://raw.githubusercontent.com/Liyafar27/homePC/master/Screenshot_20211117-102059.png" width="250" alt="accessibility text">
 
 </p>
