@@ -2,6 +2,7 @@ import 'package:bloc_weather_api/bloc/search_weather_bloc.dart';
 import 'package:bloc_weather_api/utils/string.dart';
 import 'package:bloc_weather_api/widgets/shimmer_weather.dart';
 import 'package:bloc_weather_api/model/weather_repo.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/screenutil_init.dart';
@@ -52,6 +53,11 @@ class MyApp extends StatelessWidget {
               color: Colors.white70,
               fontSize: 14.sp,
             ),
+              subtitle1: TextStyle(
+                color:  Colors.grey[900],
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w600
+              ),
           ),
         ),
         home: Scaffold(

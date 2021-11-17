@@ -128,11 +128,11 @@ class InfoWeather extends StatelessWidget {
                     : showDialog(
                         context: context,
                         builder: (context) => AlertDialog(
-                          title: Text(forgotCity),
+                          title: Text(forgotCity, style:Theme.of(context).textTheme.subtitle1),
                           actions: [
                             TextButton(
                                 onPressed: () => Navigator.pop(context),
-                                child: Text(okDialog))
+                                child: Text(okDialog, style:Theme.of(context).textTheme.subtitle1),)
                           ],
                         ),
                       );

@@ -67,13 +67,17 @@ class FirstRequestWeather extends StatelessWidget {
                   : showDialog(
                       context: context,
                       builder: (context) => AlertDialog(
-                            title: Text(forgotCity),
-                            actions: [
-                              TextButton(
-                                  onPressed: () => Navigator.pop(context),
-                                  child: Text(okDialog))
-                            ],
-                          ));
+                        title: Text(forgotCity, style:Theme.of(context).textTheme.subtitle1),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: Text(
+                              okDialog,
+                            style:Theme.of(context).textTheme.subtitle1),
+                            ),
+                        ],
+                      ),
+                    );
             },
             child:
                 Text(sendRequest, style: Theme.of(context).textTheme.headline3),
