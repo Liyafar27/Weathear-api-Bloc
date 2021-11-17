@@ -31,19 +31,38 @@ class ShimmerWeather extends StatelessWidget {
             SizedBox(
               height: 10.h,
             ),
-            Container(
-              color: Theme.of(context).disabledColor,
-              width: 200.w,
-              height: 35.h,
-            ),
+
+                Container(
+                  color: Theme.of(context).disabledColor,
+                  width: 200.w,
+                  height: 35.h,
+                ),
+
             SizedBox(
               height: 80.h,
             ),
+        Row(            mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+          children: [
             Container(
+              color: Theme.of(context).disabledColor,
+              width: 50.w,
+              height: 50.h,
+            ),SizedBox(
+      width: 20.w,
+    ),Container(
               color: Theme.of(context).disabledColor,
               width: 90.w,
               height: 65.h,
+            ),SizedBox(
+              width: 20.w,
+            ),Container(
+              color: Theme.of(context).disabledColor,
+              width: 50.w,
+              height: 50.h,
             ),
+          ],
+        ),
             SizedBox(
               height: 10.h,
             ),
@@ -53,7 +72,7 @@ class ShimmerWeather extends StatelessWidget {
               height: 40.h,
             ),
             SizedBox(
-              height: 25.h,
+              height: 35.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -82,7 +101,7 @@ class ShimmerWeather extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  width: 30.w,
+                  width: 40.w,
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -106,7 +125,7 @@ class ShimmerWeather extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  width: 30.w,
+                  width: 40.w,
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
