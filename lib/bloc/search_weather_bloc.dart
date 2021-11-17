@@ -16,8 +16,6 @@ class SearchWeatherBloc extends Bloc<SearchWeatherEvent, SearchWeatherState> {
 
   SearchWeatherBloc(this._weatherRepo) : super(SearchWeatherEmptyState());
 
-  Location? position;
-
   @override
   Stream<SearchWeatherState> mapEventToState(
     SearchWeatherEvent event,) async* {
