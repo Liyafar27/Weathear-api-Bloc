@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:bloc_weather_api/model/weather_model.dart';
 import 'package:bloc_weather_api/model/weather_repo.dart';
-import 'package:location/location.dart';
 import 'package:meta/meta.dart';
 
 part 'search_weather_event.dart';
