@@ -20,8 +20,7 @@ class SearchWeatherBloc extends Bloc<SearchWeatherEvent, SearchWeatherState> {
 
   @override
   Stream<SearchWeatherState> mapEventToState(
-    SearchWeatherEvent event,
-  ) async* {
+    SearchWeatherEvent event,) async* {
     if (event is FetchSearchWeatherEvent) {
       yield SearchWeatherIsLoading();
       try {
