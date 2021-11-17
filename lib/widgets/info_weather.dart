@@ -46,16 +46,48 @@ class InfoWeather extends StatelessWidget {
           SizedBox(
             height: 10.h,
           ),
-          Text(weather.getTemp.round().toString() + celsius,
-              style: Theme.of(context).textTheme.headline1),
-          Text(
-              weather.description +
-                  feelsLike +
-                  weather.getTemp.round().toString() +
-                  celsius,
-              maxLines: 2,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline5),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Column(
+                children: [
+                  Text(weather.getMaxTemp.round().toString() + celsius,
+                      style: Theme.of(context).textTheme.headline4),
+                  Text(
+                      maxTemp,
+                      maxLines: 2,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.headline6),
+                ],
+              ),
+              Column(
+                children: [
+                  Text(weather.getTemp.round().toString() + celsius,
+                      style: Theme.of(context).textTheme.headline1),
+                  Text(
+                      weather.description +
+                          feelsLike +
+                          weather.getTemp.round().toString() +
+                          celsius,
+                      maxLines: 2,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.headline5),
+                ],
+              ),
+              Column(
+                children: [
+                  Text(weather.getMinTemp.round().toString() + celsius,
+                      style: Theme.of(context).textTheme.headline4),
+                  Text(
+                      minTemp,
+                      maxLines: 2,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.headline6),
+                ],
+              ),
+            ],
+          ),
+
           SizedBox(
             height: 45.h,
           ),
@@ -146,7 +178,7 @@ class _InfoGrid extends StatelessWidget {
                   height: 5.h,
                 ),
                 Text(weather.windSpeed.toString() + kmHours,
-                    style: Theme.of(context).textTheme.headline3),
+                    style: Theme.of(context).textTheme.headline4),
                 Text(windSpeed,
                     maxLines: 2,
                     textAlign: TextAlign.center,
@@ -169,7 +201,7 @@ class _InfoGrid extends StatelessWidget {
                   height: 5.h,
                 ),
                 Text(weather.humidity.toString() + percent,
-                    style: Theme.of(context).textTheme.headline3),
+                    style: Theme.of(context).textTheme.headline4),
                 Text(humidity, style: Theme.of(context).textTheme.headline6),
               ],
             ),
@@ -188,8 +220,9 @@ class _InfoGrid extends StatelessWidget {
                 SizedBox(
                   height: 5.h,
                 ),
-                Text(weather.pressure.toString(),
-                    style: Theme.of(context).textTheme.headline3),
+                Text(weather.getPressure.toString() + pres,
+                    // weather.pressure.toString(),
+                    style: Theme.of(context).textTheme.headline4),
                 Text(pressure, style: Theme.of(context).textTheme.headline6),
               ],
             ),
