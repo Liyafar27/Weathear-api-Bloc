@@ -4,7 +4,7 @@ apk https://drive.google.com/file/d/1LCLoTagT-8-3fPOyOr9A0lT76HAPCWue/view?usp=s
 video     https://drive.google.com/file/d/1RtDXBa3GqJ5v9d2d6vW0bV0xpMmWB8d6/view
     
 </p>
-
+*first time opening the application require geolocation permission and after shows the weather of the current location
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/Liyafar27/homePC/master/Screenshot_20211117-101942.png" width="250" alt="accessibility text">  
