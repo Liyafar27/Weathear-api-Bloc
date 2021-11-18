@@ -7,17 +7,17 @@ import 'package:shimmer/shimmer.dart';
 class ShimmerWeather extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final speedWindAsset = 'assets/ic_wind.svg';
-    final humidityAsset = 'assets/ic_humidity.svg';
-    final pressureAsset = 'assets/ic_barometer.svg';
-    final sunriseAsset = 'assets/ic_sunrise.svg';
-    final sunsetAsset = 'assets/ic_sunset.svg';
+    const speedWindAsset = 'assets/ic_wind.svg';
+    const humidityAsset = 'assets/ic_humidity.svg';
+    const pressureAsset = 'assets/ic_barometer.svg';
+    const sunriseAsset = 'assets/ic_sunrise.svg';
+    const sunsetAsset = 'assets/ic_sunset.svg';
 
     return Shimmer.fromColors(
       baseColor: Colors.grey,
       highlightColor: Colors.white,
       child: Container(
-        padding: EdgeInsets.only(right: 40, left: 40),
+        padding: const EdgeInsets.only(right: 40, left: 40),
         child: Column(
           children: <Widget>[
             SizedBox(
@@ -31,38 +31,40 @@ class ShimmerWeather extends StatelessWidget {
             SizedBox(
               height: 10.h,
             ),
-
-                Container(
-                  color: Theme.of(context).disabledColor,
-                  width: 200.w,
-                  height: 35.h,
-                ),
-
+            Container(
+              color: Theme.of(context).disabledColor,
+              width: 200.w,
+              height: 35.h,
+            ),
             SizedBox(
               height: 80.h,
             ),
-        Row(            mainAxisAlignment: MainAxisAlignment.spaceAround,
-
-          children: [
-            Container(
-              color: Theme.of(context).disabledColor,
-              width: 50.w,
-              height: 50.h,
-            ),SizedBox(
-      width: 20.w,
-    ),Container(
-              color: Theme.of(context).disabledColor,
-              width: 90.w,
-              height: 65.h,
-            ),SizedBox(
-              width: 20.w,
-            ),Container(
-              color: Theme.of(context).disabledColor,
-              width: 50.w,
-              height: 50.h,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  color: Theme.of(context).disabledColor,
+                  width: 50.w,
+                  height: 50.h,
+                ),
+                SizedBox(
+                  width: 20.w,
+                ),
+                Container(
+                  color: Theme.of(context).disabledColor,
+                  width: 90.w,
+                  height: 65.h,
+                ),
+                SizedBox(
+                  width: 20.w,
+                ),
+                Container(
+                  color: Theme.of(context).disabledColor,
+                  width: 50.w,
+                  height: 50.h,
+                ),
+              ],
             ),
-          ],
-        ),
             SizedBox(
               height: 10.h,
             ),
@@ -72,10 +74,10 @@ class ShimmerWeather extends StatelessWidget {
               height: 40.h,
             ),
             SizedBox(
-              height: 35.h,
+              height: 30.h,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -87,7 +89,7 @@ class ShimmerWeather extends StatelessWidget {
                       width: 50.w,
                     ),
                     SizedBox(
-                      height: 5.h,
+                      height: 8.h,
                     ),
                     Container(
                       color: Theme.of(context).disabledColor,
@@ -113,7 +115,7 @@ class ShimmerWeather extends StatelessWidget {
                       width: 50.w,
                     ),
                     SizedBox(
-                      height: 5.h,
+                      height: 8.h,
                     ),
                     Container(
                       color: Theme.of(context).disabledColor,
@@ -137,7 +139,7 @@ class ShimmerWeather extends StatelessWidget {
                       width: 50.w,
                     ),
                     SizedBox(
-                      width: 30.w,
+                      height: 8.h,
                     ),
                     Container(
                       color: Theme.of(context).disabledColor,
@@ -165,6 +167,9 @@ class ShimmerWeather extends StatelessWidget {
                       height: 35.h,
                       width: 50.w,
                     ),
+                    SizedBox(
+                      height: 8.h,
+                    ),
                     Container(
                       color: Theme.of(context).disabledColor,
                       width: 55.w,
@@ -174,7 +179,7 @@ class ShimmerWeather extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  width: 30.w,
+                  width: 35.w,
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -184,6 +189,9 @@ class ShimmerWeather extends StatelessWidget {
                       color: Colors.white70,
                       height: 35.h,
                       width: 50.w,
+                    ),
+                    SizedBox(
+                      height: 8.h,
                     ),
                     Container(
                       color: Theme.of(context).disabledColor,

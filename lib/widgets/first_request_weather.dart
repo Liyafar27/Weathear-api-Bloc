@@ -11,10 +11,10 @@ class FirstRequestWeather extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final smartphoneAsset = 'assets/ic_smartphone.svg';
+    const smartphoneAsset = 'assets/ic_smartphone.svg';
     var cityController = TextEditingController();
     return Container(
-      padding: EdgeInsets.only(top: 100),
+      padding: const EdgeInsets.only(top: 100),
       child: Column(
         children: <Widget>[
           SvgPicture.asset(
@@ -28,7 +28,7 @@ class FirstRequestWeather extends StatelessWidget {
           ),
           Text(requestTitle, style: Theme.of(context).textTheme.headline2),
           Container(
-            padding: EdgeInsets.only(right: 30, left: 30, top: 20),
+            padding: const EdgeInsets.only(right: 30, left: 30, top: 20),
             child: TextFormField(
               validator: (value) {
                 if (value!.isEmpty) {
@@ -37,7 +37,7 @@ class FirstRequestWeather extends StatelessWidget {
                 return null;
               },
               controller: cityController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 prefixIcon: Icon(
                   Icons.search,
                   color: Colors.white70,
@@ -53,7 +53,7 @@ class FirstRequestWeather extends StatelessWidget {
                 hintText: fieldCity,
                 hintStyle: TextStyle(color: Colors.white70),
               ),
-              style: TextStyle(color: Colors.white70),
+              style: const TextStyle(color: Colors.white70),
             ),
           ),
           SizedBox(
@@ -67,14 +67,14 @@ class FirstRequestWeather extends StatelessWidget {
                   : showDialog(
                       context: context,
                       builder: (context) => AlertDialog(
-                        title: Text(forgotCity, style:Theme.of(context).textTheme.subtitle1),
+                        title: Text(forgotCity,
+                            style: Theme.of(context).textTheme.subtitle1),
                         actions: [
                           TextButton(
                             onPressed: () => Navigator.pop(context),
-                            child: Text(
-                              okDialog,
-                            style:Theme.of(context).textTheme.subtitle1),
-                            ),
+                            child: Text(okDialog,
+                                style: Theme.of(context).textTheme.subtitle1),
+                          ),
                         ],
                       ),
                     );

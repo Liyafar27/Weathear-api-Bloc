@@ -14,4 +14,17 @@ class WeatherRepo {
     }
     return WeatherData.fromJson(jsonDecode(response.body));
   }
+
+  Future<WeatherData> geLocationWeather(
+      double latitude, double longitude) async {
+    print(await http.read(Uri.parse(
+        'http://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&APPID=$appId&lang=ru')));
+
+    final response = await http.Client().get(Uri.parse(
+        'http://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&APPID=$appId&lang=ru'));
+    if (response.statusCode != 200) {
+      throw Exception();
+    }
+    return WeatherData.fromJson(jsonDecode(response.body));
+  }
 }

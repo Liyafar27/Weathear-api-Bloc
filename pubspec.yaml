@@ -35,6 +35,8 @@ dependencies:
   intl: ^0.17.0
   flutter_svg: ^0.22.0
   flutter_screenutil: 5.0.0-nullsafety.11
+  location: ^4.2.0
+  hydrated_bloc: 7.0.1
 
 
 

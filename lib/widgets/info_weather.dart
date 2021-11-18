@@ -17,13 +17,32 @@ class InfoWeather extends StatelessWidget {
     var weatherController = TextEditingController();
 
     return Container(
-      padding: EdgeInsets.only(right: 32, left: 32),
+      padding: const EdgeInsets.only(right: 32, left: 32),
       child: Column(
         children: <Widget>[
           SizedBox(
             height: 70.h,
           ),
-          Text(weather.name, style: Theme.of(context).textTheme.headline2),
+          GestureDetector(
+            onTap: () {
+              weatherBloc.add(FetchSearchWeatherEvent(weather.name));
+            },
+            child: RichText(
+              text: TextSpan(
+                style: Theme.of(context).textTheme.headline2,
+                children: [
+                  TextSpan(text: weather.name),
+                  const WidgetSpan(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 10, bottom: 5),
+                      child:
+                          Icon(Icons.replay, color: Colors.white70, size: 25),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
           SizedBox(
             height: 10.h,
           ),
@@ -35,7 +54,7 @@ class InfoWeather extends StatelessWidget {
             height: 30.h,
           ),
           Center(
-              child: Container(
+              child: SizedBox(
             child: Image.network(
               'https://openweathermap.org/img/w/${weather.icon}.png',
               scale: 0.3,
@@ -53,8 +72,7 @@ class InfoWeather extends StatelessWidget {
                 children: [
                   Text(weather.getMaxTemp.round().toString() + celsius,
                       style: Theme.of(context).textTheme.headline4),
-                  Text(
-                      maxTemp,
+                  Text(maxTemp,
                       maxLines: 2,
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.headline6),
@@ -78,8 +96,7 @@ class InfoWeather extends StatelessWidget {
                 children: [
                   Text(weather.getMinTemp.round().toString() + celsius,
                       style: Theme.of(context).textTheme.headline4),
-                  Text(
-                      minTemp,
+                  Text(minTemp,
                       maxLines: 2,
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.headline6),
@@ -87,7 +104,6 @@ class InfoWeather extends StatelessWidget {
               ),
             ],
           ),
-
           SizedBox(
             height: 45.h,
           ),
@@ -96,10 +112,10 @@ class InfoWeather extends StatelessWidget {
             height: 15.h,
           ),
           Container(
-            padding: EdgeInsets.only(right: 30, left: 30, top: 20),
+            padding: const EdgeInsets.only(right: 30, left: 30, top: 20),
             child: TextFormField(
               controller: weatherController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 prefixIcon: Icon(
                   Icons.search,
                   color: Colors.white70,
@@ -115,10 +131,10 @@ class InfoWeather extends StatelessWidget {
                 hintText: fieldCity,
                 hintStyle: TextStyle(color: Colors.white70),
               ),
-              style: TextStyle(color: Colors.white70),
+              style: const TextStyle(color: Colors.white70),
             ),
           ),
-          Container(
+          SizedBox(
             width: double.infinity,
             child: TextButton(
               onPressed: () {
@@ -128,11 +144,14 @@ class InfoWeather extends StatelessWidget {
                     : showDialog(
                         context: context,
                         builder: (context) => AlertDialog(
-                          title: Text(forgotCity, style:Theme.of(context).textTheme.subtitle1),
+                          title: Text(forgotCity,
+                              style: Theme.of(context).textTheme.subtitle1),
                           actions: [
                             TextButton(
-                                onPressed: () => Navigator.pop(context),
-                                child: Text(okDialog, style:Theme.of(context).textTheme.subtitle1),)
+                              onPressed: () => Navigator.pop(context),
+                              child: Text(okDialog,
+                                  style: Theme.of(context).textTheme.subtitle1),
+                            )
                           ],
                         ),
                       );

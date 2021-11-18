@@ -5,7 +5,7 @@ class WeatherData {
   final double maxTemp;
   final double minTemp;
   final double feelsLikeTemp;
-  final double windSpeed;
+  final num windSpeed;
   final String icon;
   final String description;
   final int humidity;
@@ -15,11 +15,14 @@ class WeatherData {
   final DateTime sunsetTime;
 
   double get getTemp => temp - 272.5;
-  double get getFeelsLikeTemp => feelsLikeTemp - 272.5;
-  double get getMaxTemp => maxTemp - 272.5;
-  double get getMinTemp => minTemp - 272.5;
-  int get getPressure => (pressure * 760 / 10132.5).toInt();
 
+  double get getFeelsLikeTemp => feelsLikeTemp - 272.5;
+
+  double get getMaxTemp => maxTemp - 272.5;
+
+  double get getMinTemp => minTemp - 272.5;
+
+  int get getPressure => pressure * 760 ~/ 10132.5;
 
   WeatherData({
     required this.date,
@@ -36,28 +39,47 @@ class WeatherData {
     required this.sunsetTime,
     required this.humidity,
     required this.pressure,
-
   });
 
   factory WeatherData.fromJson(Map<String, dynamic> json) {
     return WeatherData(
-      date:
-          DateTime.fromMillisecondsSinceEpoch(json['dt'] * 1000 + json['timezone'] * 1000 , isUtc: true),
-      sunriseTime: DateTime.fromMillisecondsSinceEpoch(
-          (json['sys']['sunrise']) * 1000 + json['timezone'] * 1000 , isUtc: true),
-      sunsetTime: DateTime.fromMillisecondsSinceEpoch(
-          (json['sys']['sunset']) * 1000+ json['timezone'] * 1000 , isUtc: true),
-      name: json['name'],
-      temp: json['main']['temp'].toDouble(),
-      maxTemp: json['main']['temp_max'].toDouble(),
-      minTemp: json['main']['temp_min'].toDouble(),
-      feelsLikeTemp: json['main']['feels_like'].toDouble(),
-      main: json['weather'][0]['main'],
-      icon: json['weather'][0]['icon'],
-      description: json['weather'][0]['description'],
-      humidity: json['main']['humidity'],
-      pressure: json['main']['pressure'],
-      windSpeed: json['wind']['speed'],
-    );
+        date: DateTime.fromMillisecondsSinceEpoch(
+            json['dt'] * 1000 + json['timezone'] * 1000,
+            isUtc: true),
+        sunriseTime: DateTime.fromMillisecondsSinceEpoch(
+            (json['sys']['sunrise']) * 1000 + json['timezone'] * 1000,
+            isUtc: true),
+        sunsetTime: DateTime.fromMillisecondsSinceEpoch(
+            (json['sys']['sunset']) * 1000 + json['timezone'] * 1000,
+            isUtc: true),
+        name: json['name'],
+        temp: json['main']['temp'].toDouble(),
+        maxTemp: json['main']['temp_max'].toDouble(),
+        minTemp: json['main']['temp_min'].toDouble(),
+        feelsLikeTemp: json['main']['feels_like'].toDouble(),
+        main: json['weather'][0]['main'],
+        icon: json['weather'][0]['icon'],
+        description: json['weather'][0]['description'],
+        humidity: json['main']['humidity'],
+        pressure: json['main']['pressure'],
+        windSpeed: json['wind']['speed']);
+  }
+}
+
+class ParseUtil {
+  static double parseDouble(dynamic data) {
+    String str = data?.toString() ?? "0";
+    double num = double.parse(str);
+    return num;
+  }
+
+  static int parseInt(dynamic data, {bool floor = true}) {
+    double core = parseDouble(data);
+    return floor ? core.floor() : core.ceil();
+  }
+
+  static String parseString(dynamic data) {
+    String str = data?.toString() ?? "";
+    return str;
   }
 }

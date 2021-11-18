@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = SearchWeatherBloc(WeatherRepo())..add(SearchWeatherInitialEvent());
     return ScreenUtilInit(
       designSize: const Size(375, 800),
       allowFontScaling: false,
@@ -64,7 +65,7 @@ class MyApp extends StatelessWidget {
           resizeToAvoidBottomInset: false,
           backgroundColor: Colors.grey[900],
           body: BlocProvider<SearchWeatherBloc>(
-            create: (context) => SearchWeatherBloc(WeatherRepo()),
+            create: (context) => bloc,
             child: _SearchPage(),
           ),
         ),
@@ -76,7 +77,7 @@ class MyApp extends StatelessWidget {
 class _SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final weatherBloc = BlocProvider.of<SearchWeatherBloc>(context);
+    final weatherBloc = (BlocProvider.of<SearchWeatherBloc>(context));
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.start,
@@ -94,7 +95,7 @@ class _SearchPage extends StatelessWidget {
           } else if (state is NoConnectionExceptionState) {
             return _ErrorScreen(weatherBloc, noConnectionException);
           } else {
-            return Text(
+            return const Text(
               unknowException,
               style: TextStyle(color: Colors.white),
             );
@@ -109,7 +110,7 @@ class _ErrorScreen extends StatelessWidget {
   final SearchWeatherBloc weatherBloc;
   final String errorMessage;
 
-  _ErrorScreen(this.weatherBloc, this.errorMessage);
+  const _ErrorScreen(this.weatherBloc, this.errorMessage);
 
   @override
   Widget build(BuildContext context) {
